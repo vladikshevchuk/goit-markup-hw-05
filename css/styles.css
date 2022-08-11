@@ -407,7 +407,7 @@ header {
   min-width: 73px;
   text-align: center;
   background-color: #f5f4fa;
-  color: var(--title-text-color);
+  color: #212121;
 }
 
 .button-portfolio:hover,
@@ -415,6 +415,8 @@ header {
   background-color: #2196f3;
   color: #ffffff;
   cursor: pointer;
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
 }
 
 .our-team {
@@ -422,7 +424,7 @@ header {
 }
 
 .section .title {
-  color: var(--title-text-color);
+  color: #212121;
 }
 
 .div-button-portfolio {
@@ -433,6 +435,7 @@ header {
 .div-button-portfolio .button-portfolio + .button-portfolio {
   margin-left: 8px;
 }
+
 .portfolio {
   margin-top: 50px;
   margin-bottom: 0;
@@ -455,6 +458,7 @@ header {
 .portfolio .item:nth-last-child(-n + 3) {
   margin-bottom: 0;
 }
+
 
 /* .portfolio .item { */
 /* width: calc((100%) / 3); */
@@ -485,7 +489,7 @@ header {
   color: #212121;
 }
 
-.portfolio p {
+.portfolio .description {
   padding-top: 4px;
   padding-left: 24px;
   padding-bottom: 20px;
@@ -500,6 +504,50 @@ header {
   letter-spacing: 0.03em;
 
   color: #757575;
+}
+
+.portfolio .item {
+  position: relative;
+}
+
+.portfolio .item::before {
+  opacity: 0;
+  display: inline-block;
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 294px;
+  background-color: rgba(33, 150, 243, 0.9);
+}
+
+.product-thumb {
+  opacity: 0;
+  position: absolute;
+  padding: 24px;
+  padding-top: 63px;
+  padding-bottom: 174px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 100%;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.56;
+  /* or 156% */
+
+  letter-spacing: 0.03em;
+
+  color: #FFFFFF;
+}
+
+.portfolio .item:hover::before,
+.portfolio .item .product-thumb:hover {
+  opacity: 1;
+  cursor: pointer;
 }
 
 /* Наша команда соц сети*/
